@@ -28,7 +28,6 @@ spec:
         image: chethankumar6/mysql
         ports:
         - containerPort: 3306
-
 ---
 kind: Service
 apiVersion: v1

@@ -12,6 +12,7 @@ spec:
   replicas: 3
   selector:
     matchLabels:
+    namespaces: expense
       app: mysql
       tier: db
       project: expense
@@ -33,6 +34,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: mysql
+  namespace: expense
 spec:
   selector:
     app: mysql

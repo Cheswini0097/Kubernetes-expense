@@ -34,7 +34,7 @@ spec:
         image: chethankumar6/backend
         ports:
         - containerPort: 8080
-      env_From:
+      envFrom:
       - configMapRef:
         name: backend  
 ---

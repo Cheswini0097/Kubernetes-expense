@@ -4,6 +4,6 @@ metadata:
    name: debug_containers
    namespace: expense
 spec:
-  conatainers:
+  containers:
   - name: debug
     image: chethankumar6/debug   

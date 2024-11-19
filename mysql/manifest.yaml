@@ -1,18 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mysql
-  namespace: expense
+  name: mysql-deploymet
+  namespce: expense
   labels:
     app: mysql
     tier: db
     project: expense
-
 spec:
   replicas: 3
   selector:
     matchLabels:
-    namespaces: expense
       app: mysql
       tier: db
       project: expense
@@ -29,10 +27,10 @@ spec:
         ports:
         - containerPort: 3306
 ---
-kind: Service
 apiVersion: v1
+kind: Service
 metadata:
-  name: mysql
+  name: mysql-service
   namespace: expense
 spec:
   selector:
@@ -40,8 +38,8 @@ spec:
     tier: db
     project: expense
   ports:
-  - name: mysql-port
+  - name: mysql-service
     protocol: TCP
     port: 3306
-    targetPort: 3306      
-        
+    targetPort: 3306
+

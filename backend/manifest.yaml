@@ -6,7 +6,6 @@ metadata:
 data:
   DB_HOST: mysql
 ---  
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -52,7 +51,7 @@ spec:
     tier: api
     project: expense
   ports:
-  - name: backend-service
+  - name: backend-port
     protocol: TCP
     port: 8080
     targetPort: 8080

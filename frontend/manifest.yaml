@@ -22,24 +22,7 @@ spec:
         project: expense
     spec:
       containers:
-      - name: frontend 
+      - name: frontend
         image: chethankumar6/frontend:v1
----
-kind: Service
-apiVersion: v1
-metadata:
-  name: frontend
-  namespace: expense
-spec:
-  type: LoadBalancer
-  selector:
-    app: frontend
-    tier: web
-    project: expense
-  ports:
-  - name: frontend-port
-    protocol: TCP
-    port: 80 # service port
-    targetPort: 80         
-
-   
+        ports:
+        - containerPort: 80

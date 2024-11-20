@@ -27,7 +27,7 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: staticvolume
+  name: static-volume
 spec:
   nodeSelector:
     topology.kubernetes.io/region: ap-south-1c

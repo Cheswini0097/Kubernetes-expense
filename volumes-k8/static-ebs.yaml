@@ -27,7 +27,7 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: static-volume
+  name: staticvolume
 spec:
   containers:
   - name: app

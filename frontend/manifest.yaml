@@ -22,8 +22,8 @@ spec:
         project: expense
     spec:
       containers:
-      - name: frontend
-        image: chethankumar6/frontend
+      - name: frontend 
+        image: chethankumar6/frontend:v1
 ---
 kind: Service
 apiVersion: v1
@@ -40,4 +40,6 @@ spec:
   - name: frontend-port
     protocol: TCP
     port: 80 # service port
-    targetPort: 80 # container port      
+    targetPort: 80         
+
+   

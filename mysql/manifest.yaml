@@ -23,7 +23,8 @@ spec:
     spec:
       containers:
       - name: mysql
-        image: chethankumar6/mysql
+        image: chethankumar6/mysql:v1
+
         ports:
         - containerPort: 3306
 ---
@@ -41,4 +42,5 @@ spec:
   - name: mysql-port
     protocol: TCP
     port: 3306 # service port
-    targetPort: 3306 # container port
+    targetPort: 3306 # container port        
+

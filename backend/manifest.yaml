@@ -5,7 +5,7 @@ metadata:
   namespace: expense
 data:
   DB_HOST: mysql
----  
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -29,21 +29,17 @@ spec:
         tier: api
         project: expense
     spec:
-
       containers:
       - name: backend
-        image: chethankumar6/backend
-        ports:
-        - containerPort: 8080
+        image: chethankumar6/backend:v1
         envFrom:
         - configMapRef:
-            name: backend
-
+            name: backend   
 ---
-apiVersion: v1
 kind: Service
+apiVersion: v1
 metadata:
-  name: backend-service
+  name: backend
   namespace: expense
 spec:
   selector:
@@ -53,7 +49,5 @@ spec:
   ports:
   - name: backend-port
     protocol: TCP
-    port: 8080
-    targetPort: 8080
-
-
+    port: 8080 # service port
+    targetPort: 8080 # container port                

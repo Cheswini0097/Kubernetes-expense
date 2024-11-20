@@ -33,7 +33,7 @@ spec:
   - name: app
     image: nginx
     volumeMounts:
-    - name: persistent-storage
+    - name: static-volume
       mountPath: /data
   volumes:
   - name: static-volume

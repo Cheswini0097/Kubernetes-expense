@@ -40,4 +40,4 @@ spec:
   volumes:
   - name: static-volume
     persistentVolumeClaim:
-      claimName: ebs-claim          
+      claimName: static-volume          

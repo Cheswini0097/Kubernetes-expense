@@ -30,7 +30,9 @@ metadata:
   name: staticvolume
 spec:
   containers:
-  - name: app
+  nodeSelector:
+  topology.kubernetes.io/region: ap-south-1
+  - name: nginx
     image: nginx
     volumeMounts:
     - name: static-volume

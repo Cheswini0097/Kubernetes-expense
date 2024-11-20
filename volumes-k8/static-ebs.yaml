@@ -30,7 +30,7 @@ metadata:
   name: staticvolume
 spec:
   nodeSelector:
-    topology.kubernetes.io/region: ap-south-1
+    topology.kubernetes.io/region: ap-south-1c
   containers:
     - name: nginx
     image: nginx

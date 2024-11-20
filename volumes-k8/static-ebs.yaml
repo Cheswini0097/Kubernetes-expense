@@ -22,4 +22,22 @@ spec:
   storageClassName: ebs-sc
   resources:
     requests:
-      storage: 4Gi    
+      storage: 4Gi  
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: staticvolume
+spec:
+  nodeSelector:
+    topology.kubernetes.io/region: ap-south-1
+  containers:
+    - name: nginx
+    image: nginx
+    volumeMounts:
+    - name: static-volume
+      mountPath: /data
+  volumes:
+  - name: static-volume
+    persistentVolumeClaim:
+      claimName: ebs-claim          

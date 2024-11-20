@@ -23,6 +23,6 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: chethankumar6/frontend:v1
+        image: joindevops/frontend:v1
         ports:
         - containerPort: 80

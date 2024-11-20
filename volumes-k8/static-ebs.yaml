@@ -22,37 +22,4 @@ spec:
   storageClassName: ebs-sc
   resources:
     requests:
-      storage: 4Gi
----
-apiVersion: v1
-kind: Pod
-metadata:
-  name: staticvolume
-spec:
-  containers:
-  nodeSelector:
-  topology.kubernetes.io/region: ap-south-1
-  - name: nginx
-    image: nginx
-    volumeMounts:
-    - name: static-volume
-      mountPath: /data
-  volumes:
-  - name: static-volume
-    persistentVolumeClaim:
-      claimName: ebs-claim      
-
-    
-  
-
-
-
-
-
-
-
-#Static provissioning
-#we need to create the volume in the aws in required avalabality zone
-#install the drivers (aws-ebs-csi-driver) useing follwing command
-# { kubectl apply -k "github.com/kubernetes-sigs/aws-ebs-csi-driver/deploy/kubernetes/overlays/stable/?ref=release-1.37" }
-
+      storage: 4Gi    

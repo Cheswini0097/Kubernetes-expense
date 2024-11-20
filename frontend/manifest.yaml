@@ -23,9 +23,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: joindevops/frontend:v1
-        ports:
-        - containerPort: 80 
+        image: chethankumar6/frontend
 ---
 kind: Service
 apiVersion: v1
@@ -42,4 +40,4 @@ spec:
   - name: frontend-port
     protocol: TCP
     port: 80 # service port
-    targetPort: 80 # container port
+    targetPort: 80 # container port      

@@ -18,11 +18,11 @@ metadata:
   name: static-volume
 spec:
   accessModes:
-    - ReadWriteOnce
+  - ReadWriteOnce
   storageClassName: ebs-sc
   resources:
     requests:
-      storage: 4Gi  
+      storage: 4Gi
 ---
 apiVersion: v1
 kind: Pod
@@ -32,7 +32,7 @@ spec:
   nodeSelector:
     topology.kubernetes.io/region: ap-south-1c
   containers:
-    - name: nginx
+  - name: nginx
     image: nginx
     volumeMounts:
     - name: static-volume
@@ -40,4 +40,4 @@ spec:
   volumes:
   - name: static-volume
     persistentVolumeClaim:
-      claimName: static-volume          
+      claimName: static-volume

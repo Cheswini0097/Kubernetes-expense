@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: chethankumar6/frondend:v1
+        image: chethankumar6/frontend:v1
         ports:
         - containerPort: 80
 ---

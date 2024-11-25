@@ -22,7 +22,24 @@ spec:
             cpu: 100m
             memory: 128Mi
 ```
+ once we done the these two things we can attach the Hpa for the deployment:
+ example:
 
+ ```
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+ name: backend
+ namespace: expense
+spec:
+ scaleTargetRef:
+   apiVersion: apps/v1
+   kind: Deployment
+   name: backend
+ minReplicas: 1
+ maxReplicas: 10
+ targetCPUUtilizationPercentage: 15
+```
 
 
 
